@@ -58,11 +58,25 @@ The primary executable is `target`.
 - **`target list`**
   Displays a tabulated history of your last 10 tasks and their final statuses.
 
+## Seeding Your Backlog
+
+If you have a master list of tasks (e.g., from a JSON file, spreadsheet, or text document), you can easily bulk-seed your backlog by running a sequence of `target add` commands. You can save these commands in a simple bash script:
+
+```bash
+#!/bin/bash
+# seed_tasks.sh
+
+target add "ACADEMIC" "DAA" "2026-06-10" 5
+target add "PROJECT" "Project Lobby" "2026-06-10" 5
+target add "EXTRA_LEARNING" "Machine Learning" "2026-06-10" 5
+```
+Run `bash seed_tasks.sh` to instantly populate your scheduler!
+
 ## Workflow Example
 
-1. Populate your backlog with `target add`.
+1. Populate your backlog with `target add` or by bulk-seeding.
 2. Run `target auto` to lock your first target.
 3. Work until finished.
 4. Run `target report "Completed chapter 1"` to unlock the system.
 5. Run `target auto` to instantly pull your next task from the next category in the cycle.
-# one-target
+
